@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        .container{
+            background-color: mediumslateblue;
+            width: 30vw;
+            padding: 20px;
+            color: white;
+            margin: 80px auto;
+
+        }
+        input{
+            width:  90%;
+            margin: 10px auto;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        button{
+            margin: auto;
+            border: none;
+            width: 50%;
+            padding: 5px;
+            background-color: black;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        }
+        .output{
+            width: 90%;
+            height: 5vh;
+            background-color: white;
+            border-radius: 10px;
+            color: black;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Enter the input" id="input">
+        <button onclick="Find()">Find</button>
+        <div>
+            <h2>Maximum in the Array:</h2>
+            <p class="output" id="max"></p>
+        </div>
+        <div>
+            <h2>sum of element in the Array:</h2>
+            <p class="output" id="sum"></p>
+        </div>
+        <div>
+            <h2>Odd number in the Array:</h2>
+            <p class="output" id="odd"></p>
+        </div>
+    </div>
+    <script>
+        function Find(){
+        var input = document.getElementById("input").value;
+        var temp = input.split(" ");
+        document.getElementById("max").innerText= Max(temp);
+        document.getElementById("sum").innerText= Sum(temp);
+        document.getElementById("odd").innerText= Odd(temp);
+        
+        }
+        function Max(temp){
+            maxtemp = 0;
+            temp.forEach(element => {
+                if(parseInt(element)>=maxtemp){
+                    maxtemp=parseInt(element);
+                }  
+            });
+            return maxtemp;
+        }
+        function Sum(temp){
+            maxtemp = 0;
+            temp.forEach(element => {
+                    maxtemp+=parseInt(element);
+            });
+            return maxtemp;
+        }
+        function Odd(temp){
+            count = 0;
+            temp.forEach(element => {
+                if(parseInt(element)%2!=0 ){
+                    count++;
+                }  
+            });
+            return count;
+        }
+    </script>
+    
+</body>
+</html>
